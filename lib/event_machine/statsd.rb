@@ -7,6 +7,10 @@ require 'event_machine/em_statsd/tcp_wrapper'
 module EventMachine
   class Statsd < ::Statsd
 
+    def initialize(*args)
+      super
+    end
+
     def connect
       @s_mu.synchronize do
         begin
@@ -17,9 +21,9 @@ module EventMachine
 
         case @protocol
           when :tcp
-            @socket = EventMachine::EMStatsd::TCPWrapper.new @host, @port
+            @socket = EMStatsd::TCPWrapper.new host, port
           else
-            @socket = EventMachine::EMStatsd::UDPWrapper.new @host, @port
+            @socket = EMStatsd::UDPWrapper.new host, port
         end
       end
     end

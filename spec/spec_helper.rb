@@ -13,7 +13,7 @@ class FakeUDPSocket
     @buffer = []
   end
 
-  def write(message)
+  def send_datagram(message, _, _)
     @buffer.push [message]
     message.length
   end
@@ -37,7 +37,7 @@ end
 
 class FakeTCPSocket < FakeUDPSocket
   alias_method :readline, :recv
-  def write(message)
-    @buffer.push message
+  def send_data(message)
+    @buffer.push [message]
   end
 end
