@@ -11,11 +11,13 @@ Gem::Specification.new do |gem|
   gem.author      = 'Valery Mayatsky'
   gem.email       = 'valerymayatsky@gmail.com'
   gem.description = 'An Event Machine wrapper around Ruby Statsd client.'
-  gem.summary     = 'An Event Machine wrapper around Ruby Statsd client.'
+  gem.summary     = 'EM::Statsd is a simple async wrapper around the ruby Statsd client. It uses EventMachine Connection class to push data around.'
 
-  gem.add_dependency 'eventmachine', '>= 1.2.0'
-  gem.add_dependency 'statsd-ruby', '= 1.3.0'
+  gem.add_runtime_dependency 'eventmachine', '~> 1.2'
+  gem.add_runtime_dependency 'statsd-ruby', '= 1.3.0'
   gem.add_development_dependency 'bundler', '~> 1.0'
+
+  gem.license     = 'MIT'
 
   gem.executables = `git ls-files -- bin/*`.split("\n").map{|f| File.basename(f)}
   gem.files       = `git ls-files`.split("\n")
