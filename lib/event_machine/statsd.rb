@@ -16,7 +16,7 @@ module EventMachine
         begin
           @socket.close if @socket
         rescue
-          # Errors are ignored on reconnects.
+          self.class.logger.error { 'Statsd: can not close connection' } if self.class.logger
         end
 
         case @protocol
@@ -27,8 +27,6 @@ module EventMachine
         end
       end
     end
-
-    protected
 
     def send_to_socket(message)
       socket.write(message)
