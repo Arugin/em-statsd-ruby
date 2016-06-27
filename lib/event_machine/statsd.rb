@@ -1,7 +1,8 @@
 require 'eventmachine'
+require 'statsd-ruby'
 
-require 'event_machine/statsd/udp_wrapper'
-require 'event_machine/statsd/tcp_wrapper'
+require 'event_machine/em_statsd/udp_wrapper'
+require 'event_machine/em_statsd/tcp_wrapper'
 
 module EventMachine
   class Statsd < ::Statsd
@@ -16,9 +17,9 @@ module EventMachine
 
         case @protocol
           when :tcp
-            @socket = EventMachine::Statsd::TCPWrapper.new @host, @port
+            @socket = EventMachine::EMStatsd::TCPWrapper.new @host, @port
           else
-            @socket = EventMachine::Statsd::UDPWrapper.new @host, @port
+            @socket = EventMachine::EMStatsd::UDPWrapper.new @host, @port
         end
       end
     end

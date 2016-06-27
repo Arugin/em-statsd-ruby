@@ -1,13 +1,12 @@
 module EventMachine
-  module Statsd
-    class UDPWrapper
+  module EMStatsd
+    class TCPWrapper
 
       def initialize(host, port)
-        @host, @port = host, port
         # eventmachine forces us to listen on a UDP socket even
         # though we only
         # want to send, so we'll just give it a junk address
-        @connection = EM.open_datagram_socket('0.0.0.0', 0, EM::Connection)
+        @connection = EM.connect(host, port, EM::Connection)
       end
 
       def close
@@ -19,7 +18,7 @@ module EventMachine
       end
 
       def write(message)
-        @connection.send_datagram(message, @host, @port)
+        @connection.send_data(message)
       end
 
     end

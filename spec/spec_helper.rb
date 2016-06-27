@@ -1,9 +1,11 @@
-require 'bundler/setup'
-
 require 'simplecov'
 SimpleCov.start
 
+require 'coveralls'
+Coveralls.wear!
+
 require 'em-statsd-ruby'
+require 'rspec'
 require 'logger'
 
 class FakeUDPSocket
