@@ -1,0 +1,20 @@
+PATH
+  remote: .
+  specs:
+    em-statsd-ruby (1.0.0)
+      eventmachine (>= 1.2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    eventmachine (1.2.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.0)
+  em-statsd-ruby!
+
+BUNDLED WITH
+   1.11.2
