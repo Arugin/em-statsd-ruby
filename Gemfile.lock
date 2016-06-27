@@ -56,6 +56,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
@@ -67,6 +68,7 @@ DEPENDENCIES
   rake
   rspec
   simplecov
+  yard
 
 BUNDLED WITH
    1.11.2
