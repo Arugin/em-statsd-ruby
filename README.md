@@ -1,4 +1,6 @@
 # EventMachine Statsd
+[![Build Status](https://travis-ci.org/Arugin/em-statsd-ruby.svg?branch=master)](https://travis-ci.org/Arugin/em-statsd-ruby)
+[![Build Status](https://travis-ci.org/Arugin/em-statsd-ruby.svg?branch=master)](https://travis-ci.org/Arugin/em-statsd-ruby)
 
 EM::Statsd is a simple async wrapper around the ruby Statsd client.
 It uses EventMachine Connection class to push data around.
