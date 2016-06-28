@@ -1,5 +1,5 @@
 module EMStatsd
-  class UDPWrapper
+  class UDPWrapper < BaseWrapper
 
     attr_reader :connection
 
@@ -25,4 +25,3 @@ module EMStatsd
 
   end
 end
-

@@ -1,5 +1,5 @@
 module EMStatsd
-  class TCPWrapper
+  class TCPWrapper < BaseWrapper
 
     attr_reader :connection
 
@@ -24,4 +24,3 @@ module EMStatsd
 
   end
 end
-
