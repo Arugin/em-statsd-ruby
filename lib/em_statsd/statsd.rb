@@ -1,15 +1,5 @@
-require 'eventmachine'
-require 'statsd-ruby'
-
-require 'event_machine/em_statsd/udp_wrapper'
-require 'event_machine/em_statsd/tcp_wrapper'
-
 module EventMachine
-  class Statsd < ::Statsd
-
-    def initialize(*args)
-      super
-    end
+  class Statsd< ::Statsd
 
     def connect
       @s_mu.synchronize do
@@ -36,4 +26,5 @@ module EventMachine
     end
 
   end
+
 end
